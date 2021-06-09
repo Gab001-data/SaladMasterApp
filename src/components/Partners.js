@@ -18,18 +18,20 @@ function Partners(){
                     Together with Saladmaster, we are honored to partner with exceptional organizations that are making life better for people around the world.
                 </p>
                 <Router>
-                    <Link variant="outlined" style={{padding:'20px',background:'#fff', border: '1px solid #ff7d01', color: '#ff7d01'}} to="/partner">
+                    <Link variant="outlined" style={{padding:'10px 20px',background:'#fff', border: '1px solid #ff7d01', color: '#ff7d01', textDecoration:'none'}} to="/partner">
                         See More
                     </Link>
                 </Router>
                 
             </div>
-            <div className="partner-logo">
-                <div className="logo">
-                    <img src={America_cancer} width="100%" height="100%" alt="America_cancer" />
-                </div>
-                <div className="logo">
-                    <img src={America_diabitis} width="100%" height="100%" alt="America_diabitis" />
+            <div className="partners">
+                <div className="partner-logo">
+                    <div className="logo">
+                        <img src={America_cancer} width="100%" height="100%" alt="America_cancer" />
+                    </div>
+                    <div className="logo">
+                        <img src={America_diabitis} width="100%" height="100%" alt="America_diabitis" />
+                    </div>
                 </div>
                 <div className="logo3">
                     <img src={Physicians_committee} width="100%" height="100%" alt="Physicians_committee" />

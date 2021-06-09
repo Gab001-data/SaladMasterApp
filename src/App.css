@@ -238,11 +238,11 @@ div.col {
     height: 105vh;
 }
 .post-active {
-    transform: scaleX(1);
-    transition-duration: 2s;
+    opacity: 1;
+    /*transition-duration: 2s;*/
 }
 .post {
-    transform: scaleX(0);
+    opacity: 0;
     /*transition-duration: 2s;*/
 }
 .blog-btn {
@@ -408,7 +408,7 @@ div.col {
 }
 .social-title {
     width: 30%;
-    margin: 0 auto 20px;
+    margin: 0 auto 30px;
     text-align: center;
     position: relative;
 }
@@ -416,10 +416,10 @@ div.col {
     font-size: x-large;
     font-weight: bold;
 }
-.socials span {
+.social-title span {
     width: 18%;
     position: absolute;
-    left: 11%;
+    left: 17%;
 }
 .socials .social-icons {
     display: flex;
@@ -433,26 +433,210 @@ div.col {
     justify-content: space-between;
     background-color: rgba(0,0,0,0.8);
     color: #fff;
-    padding: 40px 6rem;
+    padding: 60px 6rem;
 }
-.footer-links h5 {
+.footer-links h3 {
     padding: 10px 0;
 
 }
-.footer-links p {
+.footer-links a {
     text-decoration: none;
-    padding: 7px 0;
+    color: #fff;
 }
-.faq-contact, .navigations, .subscription {
+.footer-links a p {
+    padding: 10px 0;
+}
+.faq-contact, .navigations, .subscription, .tutorials {
     text-align: left;
     font-size: medium;
-    width: 35%;
+    width: 25%;
+}
+.subscription .email-info {
+    display: flex;
+    justify-content: space-between;
 }
 .subscription .email-info input {
     padding: 10px;
     width: 60%;
     margin: 15px 10px 0 0;
 }
+.subscription .email-info input.submit-btn {
+    padding: 10px 20px;
+    text-align: center;
+    background-color: #ff7d01;
+    color: #fff;
+    border: none;
+    width: 30%;
+}
 .footer-icon {
     color: #ff7d01;
+}
+/*Product Details section*/
+.product {
+    width: 100%;
+    padding: 40px 6rem
+
+}
+.product-details {
+    display: flex;
+    justify-content: space-between;
+}
+.product-img {
+    width: 55%;
+}
+.display-img {
+    width: 100%;
+    height: 60vh;
+}
+.thumbnails {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+    width: 100%;
+    border: 1px solid grey;
+}
+.thumbnails-item {
+    width: 20%;
+    cursor: pointer;
+}
+.product-info {
+    width: 40%;
+    padding-top: 40px;
+}
+.product-status {
+    background-color: rgba(51, 153, 51,0.4);
+    display: inline-block;
+    padding: 8px 20px;
+    font-size: 1rem;
+    border-radius: 2px;
+    color: rgb(51, 153, 51);
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+    margin-bottom: 10px;
+}
+.details {
+
+}
+.product-title {
+    padding: 20px 0 5px;
+}
+.ratings {
+    margin: 0 0 20px;
+    display: flex;
+    justify-content: flex-start;
+}
+.review-no {
+    color: #96d701;
+    margin-left: 0.8rem;
+}
+.product-description {
+
+}
+.product-amt {
+    margin: 20px 0;
+    font-size: large;
+    font-weight: bolder;
+}
+.product-amt .naira {
+    text-decoration: line-through;
+    margin-right: 2px;
+}
+.product-amt .dollar-price {
+    font-size: small;
+    color: gray;
+    margin-left: 0.8rem;
+}
+.Add-to-chart {
+    display: flex;
+    margin-top: 40px;
+}
+.change-value {
+    font-size: 1.6rem;
+    padding: 0 1rem;
+    cursor: pointer;
+    font-weight: 550;
+}
+.change-value.first {
+    padding-left: 0;
+}
+.item-value {
+    width: 10%;
+    text-align: center;
+}
+.share-product {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 60px;
+    width: 35%;
+}
+.share-text p {
+    font-size: small;
+    font-weight: bolder;
+    margin-right: 0.25rem;
+}
+.social-icons.share-icons a {
+    margin-right: 0.25rem;
+}
+/*Product review section*/
+.product-review {
+    margin-top: 130px;
+}
+.tabs {
+    display: flex;
+}
+.active-tab{
+    padding: 10px 3rem;
+    font-size: large;
+    font-weight: bold;
+    border: 2px solid gray;
+    box-shadow: 5px 2px 5px grey;
+    margin-right: 0.15rem;
+    border-bottom: 3px solid #ff7d01;
+    cursor: pointer;
+}
+.review-tab {
+    padding: 10px 3rem;
+    font-size: large;
+    font-weight: bold;
+    border: 2px solid gray;
+    cursor: pointer;
+}
+.feature-review {
+    border: 1px solid gray;
+    min-height: 80vh;
+}
+.product-features {
+    width: 40%;
+    margin: 10px;
+    line-height: 40px;
+}
+.review-content {
+    margin: 20px 0.8rem;
+    width: 55%;
+}
+.review-item {
+    margin-bottom: 20px;
+}
+.reviewer-info {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.reviewer {
+    width: 75%;
+    padding-top: 5px;
+}
+.reviewer h5 {
+    font-size: medium;
+    font-weight: bolder;
+}
+.review-date {
+    padding-top: 15px;
+}
+.review-text {
+    font-weight: normal;
+    padding: 5px 3.8rem;
+}
+.review-button {
+    width: 100%;
+    text-align: right;
 }

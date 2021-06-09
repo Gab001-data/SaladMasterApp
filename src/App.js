@@ -1,15 +1,12 @@
 import React, { useState } from "react";
 import Navbar from "./components/Navbar"
-import {BrowserRouter as Router} from "react-router-dom";
+import {BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import "./App.css";
-import Hero from "./components/Hero";
-import { HeroData } from "./components/HeroData";
-import Services from "./components/Services";
-import Meal from "./components/Meal";
-import Blog from "./components/Blog";
-import Testimonial from "./components/Testimonial";
-import Partners from "./components/Partners";
-
+import Home from "./components/Home";
+import Footer from "./components/Footer";
+import SignUP from "./components/SignUp";
+import SignIn from "./components/SignIn";
+import ProductDetails from "./components/ProductDetails";
 function App() {
   /*const [currentItem, setCurrentItem]= useState(0);
   function displayHero(){
@@ -21,13 +18,23 @@ function App() {
     <>
       <Router>
         <Navbar />
+        <Switch>
+          <Route path="/SignUp">
+            <SignUP />
+          </Route>
+          <Route path="/SignIn">
+            <SignIn />
+          </Route>
+          <Route path="/products/personal-set">
+            <ProductDetails id={0} />
+            <Footer />
+          </Route>
+          <Route path="/">
+            <Home />
+            <Footer />
+          </Route>
+        </Switch>
       </Router>
-      <Hero heroInfo={HeroData} />
-      <Services />
-      <Meal />
-      <Blog />
-      <Testimonial />
-      <Partners />
     </>
 
   );
