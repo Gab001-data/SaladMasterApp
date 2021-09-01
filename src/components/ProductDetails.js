@@ -6,6 +6,7 @@ import {Link} from "react-router-dom";
 import ReviewData from "../Data/ReviewData";
 import Ratings from "./Ratings";
 import Avatar from '@material-ui/core/Avatar';
+import InputForm from "./InputForm";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -32,6 +33,7 @@ export default function ProductDetails(props){
     let count=0;            //number of reviews for the particular product.
     const rate=365;
     let sumRatings=0;             //sum of likes/rating divide by total reviews.
+    let otherProductCount=0       // holds for number of other product item to be displayed.
     ReviewData.map((review)=>{
         if(props.id===review.productId){
             sumRatings+=review.rating;
@@ -60,11 +62,14 @@ export default function ProductDetails(props){
         setactiveTab(event.target.id);
     }
     function showReviewForm(event){
-        setShowForm(!showForm);
         event.preventDefault();
+        console.log(!showForm)
+        setShowForm(!showForm);
+        
     }
     return (
         <section className="product">
+        {/*Product image section */}
             <div className="product-details">
                 <div className="product-img">
                     <div className="display-img">
@@ -78,6 +83,7 @@ export default function ProductDetails(props){
                         ))}
                     </div>
                 </div>
+                {/*Product information section */}
                 <div className="product-info">
                     <h5  className="product-status">{ProductData[props.id].stock>0? "stocked":"sold out"}</h5>
                     <div className="details">
@@ -118,6 +124,7 @@ export default function ProductDetails(props){
             </div>
 
             {/*Product review section */}
+
             <div className="product-review">
                 <div className="tabs">
                     <div className={activeTab==="product"? "active-tab":"review-tab"} id="product" onClick={handleTabClick}>Features</div>
@@ -126,39 +133,65 @@ export default function ProductDetails(props){
                 <div className="feature-review">
                     {
                         activeTab==="product" && 
-                        <div className="product-features">
-                            {ProductData[props.id].features}
+                        <div style={{width:"80%", margin:"Auto"}}>
+                            <div className="product-features">
+                                {ProductData[props.id].features}
+                            </div>
                         </div>
                     }
                     {
                         activeTab==="review" &&
-                        <div className="review-content">
-                            {ReviewData.map((item,index)=>{
-                                return item.productId===props.id? 
-                                <div key={index} className="review-item">
-                                    <div className="reviewer-info">
-                                        <Avatar src="" />
-                                        <div className="reviewer">
-                                            <h5>{item.reviewer.name}</h5>
-                                            <Ratings rating={item.rating} />
+                        <div style={{width:"80%", margin:"Auto"}}>
+                            <div className="review-content">
+                                {ReviewData.map((item,index)=>{
+                                    return item.productId===props.id? 
+                                    <div key={index} className="review-item">
+                                        <div className="reviewer-info">
+                                            <Avatar src="" />
+                                            <div className="reviewer">
+                                                <h5>{item.reviewer.name}</h5>
+                                                <Ratings rating={item.rating} color="rgb(242, 242, 242, 0.7)"/>
+                                            </div>
+                                            <p className="review-date">{item.Date}</p>
                                         </div>
-                                        <p className="review-date">{item.Date}</p>
-                                    </div>
-                                    <div className="review-text">
-                                        <p>
-                                            {item.content}
-                                        </p>
-                                    </div>
-                                    
-                                </div>: null
-                            })}
+                                        <div className="review-text">
+                                            <p>
+                                                {item.content}
+                                            </p>
+                                        </div>
+                                        
+                                    </div>: null
+                                })}
+                            </div>
                             <div className="review-button">
-                                <Button variant="contained" className={classes.buttonReview} href="" onClick={showReviewForm}>Add Review</Button>
+                                <button className="btn-showForm " onClick={showReviewForm}>Add  Review</button>
+                            </div>
+                            <div className="review-form">
+                                {showForm && <InputForm id={props.id} />}
                             </div>
                         </div>
                     }
                 </div>
 
+            </div>
+            {/* Other Product section */}
+            <div className="other-product-listings">
+                <div className="other-title">
+                    <h1>You may also like</h1>
+                    <span className="other-line"></span>
+                </div>
+                <div className="other-products">
+                    {ProductData.map((item,index)=>{
+                        otherProductCount+=1;
+                       return index!==props.id && otherProductCount<=5 && <div className="other-product-info" key={item.id}>
+                            <img src={item.img[0]} alt={item.name} width="100%" height="80%"/>
+                            <h4 className="other-product-title">{item.name}</h4>
+                            <Button href={"/products/"+item.name} color="primary" style={{fontSize: "small"}}>
+                                See more
+                            </Button>
+                        </div>
+                    })}
+                </div>
             </div>
         </section>
     )

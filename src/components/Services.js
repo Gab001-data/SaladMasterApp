@@ -26,9 +26,9 @@ function Services(){
                 <h1>Your Food as Medicine. Eat healthy, Stay healthy</h1>
                 <p>We provide service that improves your health and helps you fight and prevent lifestyle disease</p>
             </div>
-            <div className="row">
+            <div className="row-container">
                {/*Products */}
-              <div className="col">
+              <div className="col-container">
                   <img src={cookware1} width="100%" height="250px" alt="" />
                   <div className="services-content">
                       <h1>Premium Titanium 360 Stainless Steel Ti</h1>
@@ -44,7 +44,7 @@ function Services(){
                   </div>
               </div>
               {/*Cook School */}
-              <div className="col col2">
+              <div className="col-container col2">
                   <img src={food} width="100%" height="250px" alt="" />
                   <div className="services-content content2">
                       <h1>Cook School</h1>
@@ -57,7 +57,7 @@ function Services(){
                   </div>
               </div>
               {/* 30 days food challange */}
-              <div className="col">
+              <div className="col-container">
                   <img src={food_challenge1} width="100%" height="250px" alt="" />
                   <div className="services-content">
                       <h1>Thirty (30) days food challange</h1>

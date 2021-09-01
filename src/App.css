@@ -19,7 +19,7 @@ body {
 .top-title p {
     margin-right: 20px;
 }
-/* Hero section styling */
+/*-------------------------------- Hero section styling ---------------------------------------*/
 .hero-container {
     position: relative;
 }
@@ -81,7 +81,7 @@ body {
 .indicator-active {
     background-color: grey;
 }
-/*Animations */
+/*-----------------------------------------Animations ---------------------------------------*/
 .heroTitle-active {
     opacity: 1;
     transition-duration:  2s;
@@ -91,7 +91,7 @@ body {
     opacity: 0;
     transition-duration:  1s;
 }
-/*Service section styling*/
+/*-------------------------------------Service section styling--------------------------------*/
 .services {
     width: 100%;
     /*height: 120vh;*/
@@ -118,12 +118,12 @@ body {
     padding: 10px 0.1rem;
     font-size: large;
 }
-.row {
+.row-container {
     display: flex;
     margin-bottom: 90px;
     justify-content: space-between;
 }
-div.col {
+div.col-container {
     width: 32%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     text-align: center;
@@ -155,10 +155,10 @@ div.col {
     justify-content: space-between;
     margin-top: 30px;
 }
-.col.col2 {
+.col-container.col2 {
     margin-top: 30px;
 }
-/*Meal of the day section*/
+/*--------------------------------------Meal of the day section-------------------------------------*/
 .today-meal {
     padding: 20px 6rem;
     margin-top: 80px;
@@ -194,7 +194,7 @@ div.col {
     font-weight: bolder;
     margin-bottom: 10px;
 }
-/* Meal title animation*/
+/*------------------------------------------ Meal title animation ------------------------------*/
 .display-title {
     opacity: 1;
     transition-duration: 2s;
@@ -203,7 +203,7 @@ div.col {
     opacity: 0;
     transition-duration: 2s;
 }
-/* Blog post*/
+/*------------------------------------ Blog post----------------------------------------------------*/
 .blog-post {
     margin-top: 130px;
     position: relative;
@@ -249,7 +249,7 @@ div.col {
     width: 20%;
     margin: 10px auto;
 }
-/*Testimonial section*/
+/*----------------------------------Testimonial section------------------------------------------*/
 .testimonial-section {
     display: flex;
     justify-content: space-between;
@@ -335,7 +335,7 @@ div.col {
     font-size: x-large;
     font-weight: bolder;
 }
-/*Testimonial animation*/
+/*------------------------------------------Testimonial animation-------------------------------------*/
 .testimonial-active {
     opacity: 1;
     transition-duration: 2s;
@@ -353,7 +353,7 @@ div.col {
 .currentImg {
     transform: translateX(100px);
 }
-/*Partners section*/
+/*-----------------------------------------Partners section-------------------------------------------*/
 .partners-section {
     display: flex;
     margin-top: 80px;
@@ -397,7 +397,7 @@ div.col {
     width: 40%;
     margin: 20px auto;
 }
-/*Footer section*/
+/*------------------------------------Footer section----------------------------------------------*/
 .footer-section {
     margin-top: 80px;
     
@@ -437,7 +437,7 @@ div.col {
 }
 .footer-links h3 {
     padding: 10px 0;
-
+    font-size: 1.3rem;
 }
 .footer-links a {
     text-decoration: none;
@@ -446,10 +446,13 @@ div.col {
 .footer-links a p {
     padding: 10px 0;
 }
-.faq-contact, .navigations, .subscription, .tutorials {
+.faq-contact, .navigations, .tutorials {
     text-align: left;
     font-size: medium;
-    width: 25%;
+    width: 20%;
+}
+.subscription {
+    width: 35%;
 }
 .subscription .email-info {
     display: flex;
@@ -471,7 +474,7 @@ div.col {
 .footer-icon {
     color: #ff7d01;
 }
-/*Product Details section*/
+/*---------------------------------------Product Details section-------------------------------------*/
 .product {
     width: 100%;
     padding: 40px 6rem
@@ -480,13 +483,17 @@ div.col {
 .product-details {
     display: flex;
     justify-content: space-between;
+    width: 90%;
+    margin: 70px auto auto;
 }
 .product-img {
-    width: 55%;
+    width: 45%;
+    box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 10px 20px 20px;
 }
 .display-img {
     width: 100%;
-    height: 60vh;
+    height: 350px;
 }
 .thumbnails {
     display: flex;
@@ -500,7 +507,7 @@ div.col {
     cursor: pointer;
 }
 .product-info {
-    width: 40%;
+    width: 50%;
     padding-top: 40px;
 }
 .product-status {
@@ -592,6 +599,8 @@ div.col {
     margin-right: 0.15rem;
     border-bottom: 3px solid #ff7d01;
     cursor: pointer;
+    width: 30%;
+    text-align: center;
 }
 .review-tab {
     padding: 10px 3rem;
@@ -599,22 +608,31 @@ div.col {
     font-weight: bold;
     border: 2px solid gray;
     cursor: pointer;
+    width: 30%;
+    text-align: center;
 }
 .feature-review {
     border: 1px solid gray;
     min-height: 80vh;
 }
-.product-features {
-    width: 40%;
-    margin: 10px;
+.product-features, .review-content  {
+    width: 100%;
+    margin: 40px auto;
     line-height: 40px;
+    padding: 40px 12rem;
+    background: lightgray;
+    min-height: 70vh;
+    font-size: large;
 }
 .review-content {
-    margin: 20px 0.8rem;
-    width: 55%;
+    padding: 40px 8rem;
+    line-height: normal;
+    min-height: 50vh;
 }
 .review-item {
     margin-bottom: 20px;
+    background: rgba(242, 242, 242,0.3);
+    padding: 10px;
 }
 .reviewer-info {
     display: flex;
@@ -631,6 +649,7 @@ div.col {
 }
 .review-date {
     padding-top: 15px;
+    font-size: 0.85rem;
 }
 .review-text {
     font-weight: normal;
@@ -639,4 +658,79 @@ div.col {
 .review-button {
     width: 100%;
     text-align: right;
+}
+.btn-showForm, .review-form input.submit-btn {
+    background-color: #28696d;
+    color: #fff;
+    padding: 10px 1.1rem;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-size: medium;
+}
+.btn-showForm:hover, input.submit-btn:hover {
+    background-color: rgba(40,105,109,0.3);
+    color: #000;
+}
+.review-form {
+    text-align: center;
+    padding-top: 20px;
+    margin-bottom: 40px;
+}
+.review-form span{
+    font-size: large;
+    font-weight: 700;
+    margin-right: 3.5rem;
+}
+.review-form input {
+    width: 45%;
+    padding: 12px;
+    border-radius: 4px;
+    border: 1px solid lightblue;
+}
+.form-elememt {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+.form-element.comment {
+    text-align: left;
+    padding-left: 10.55rem;
+}
+.form-element.comment textarea {
+    width: 55%;
+    height: 25vh;
+    border-color: lightblue;
+}
+input.submit-btn {
+    margin-left: 6.6rem;
+    margin-left: 6.6rem;
+    padding: 12px;
+    font-size: large;
+}
+/* Other Product section */
+
+.other-product-listings {
+    margin-top: 80px;
+}
+.other-title {
+    position: relative;
+}
+.other-title .other-line {
+    position: absolute;
+    width: 10%;
+    border: 1px solid #ff7d01;
+    top: 40px;
+}
+.other-products {
+    display: flex;
+    justify-content: space-between;
+}
+.other-product-info {
+    width: 23%;
+    margin-top: 70px;
+    height: 50vh;
+    box-shadow: 5px 4px 8px lightgrey;
+    text-align: center;
+    background-color: lightgrey;
 }

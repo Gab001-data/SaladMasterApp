@@ -2,7 +2,7 @@
     --primary: #1888ff;
   }
   
-  .btn {
+  .btn-signup {
     padding: 8px 16px;
     border-radius: 4px;
     outline: none;
@@ -14,7 +14,7 @@
     margin-bottom: 12px;
   }
   
-  .btn:hover {
+  .btn-signup:hover {
     padding: 6px 10px;
     transition: all 0.3s ease-out;
     background-color:#fff;

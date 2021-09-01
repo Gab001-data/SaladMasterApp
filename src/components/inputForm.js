@@ -1,39 +1,54 @@
 import React, {useState} from "react";
 import Ratings from "./Ratings";
 
-function InputForm(){
+
+function InputForm(props){
     const [ratings, setRating]= useState(0);
-    function handleRatings(id){
-        setRating(Number(id));
+    const [formDetails, setformDetails]=useState({productId:props.id});
+    function handleRatings(obj){
+        const id=Number(obj.target.id);
+        setRating(id);
+        setformDetails(formDetails=>({...formDetails,rating:id}))
+        console.log(ratings);
+    }
+    function handleSubmit(event){
+        event.preventDefault();
+        console.log(formDetails);
+        
+    }
+    function handleChange(event){
+        const name=event.target.name
+        setformDetails(formDetails=>({...formDetails,[name]:event.target.value}));
+        console.log(formDetails)
     }
     return (
-        <div>
-            <form>
-                <div class="form-group">
-                    <label for="title">Title</label>
-                    <input type="text" class="form-control" id="title" />
+        <div className="review-form">
+            <form onSubmit={handleSubmit}>
+                <div className="form-elememt">
+                    <span>Title:</span>
+                    <input type="text" name="title" required onChange={handleChange} value={formDetails.title}/>
                 </div>
-                <div class="form-group">
-                    <label for="reviewContent">Example textarea</label>
-                    <textarea class="form-control" id="reviewContent" rows="5"></textarea>
+                <div className="form-elememt comment" style={{justifyContent: "flex-start",
+    paddingLeft: "10.5rem"}}>
+                    <span>Comment:</span>
+                    <textarea style={{width: "55%",height: "25vh",borderColor: "lightblue"}} name="content" row="6" col="30" onChange={handleChange} value={formDetails.content}> </textarea>
                 </div>
-                <div class="form-group">
-                    <label for="naem">Name</label>
-                    <input type="text" class="form-control" id="name" />
+                <div className="form-elememt">
+                    <span>Name:</span>
+                    <input type="text" name="name" required onChange={handleChange} value={formDetails.name} />
                 </div>
-                <div class="form-group">
-                    <label for="exampleFormControlInput1">Email address</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" />
+                <div className="form-elememt">
+                    <span>Email:</span>
+                    <input type="email" name="email" placeholder="someone@gmail.com" required onChange={handleChange} value={formDetails.email}/>
                 </div>
-                <div class="form-group">
-                    <label for="title">Overall Rating</label>
-                    <div>
-                        <Ratings rating={ratings} assignRating={handleRatings} />
-                    </div>
-                    <input type="text" class="form-control" id="title" hidden />
+                <div className="form-elememt" style={{justifyContent: "flex-start",
+    paddingLeft: "12.2rem"}}>
+                    <span>Rating:</span> 
+                    <Ratings rating={ratings} type="input" handleClick={handleRatings} />
                 </div>
+                <input type="text" name="rating" value={ratings} hidden></input>
+                <input type="submit" value="Submit review" className="submit-btn"/> 
             </form>
-
         </div>
     )
 }

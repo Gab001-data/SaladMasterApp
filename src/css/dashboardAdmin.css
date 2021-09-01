@@ -1,0 +1,475 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Merriweather Montserrat 'san serif';
+}
+a {
+    text-decoration: none;
+    color: #000;
+}
+.section-container {
+    display: flex;
+}
+.main-content {
+    width: 83%;
+}
+
+/*---------------------------------Top Nav section styling-------------------------------------*/
+.flexbox {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+.dashboard-nav {
+    background: #fff;
+    padding: 15px 2%;
+    margin-bottom: 30px;
+    box-shadow: 10px 0 15px rgb(0 0 0 / 30%);
+    position: sticky;
+    width: 100%;
+}
+.left-nav-item {
+    display: flex;
+    width: 40%;
+    justify-content: space-between;
+    align-items: center;
+}
+.mobile-items {
+    display: none;
+}
+.search-form {
+    width: 100%;
+}
+.input-group {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+}
+.input-group input[type="text"] {
+    font-size: large;
+    width: 90%;
+    border: 0;
+    outline: 0;
+    padding: 5px 10px;
+    background: rgba(189, 195, 199,0.2);
+}
+.btn-search {
+    color: #fff;
+    /* margin-bottom: unset; */
+    border: 0;
+    width: 10%;
+    background: #ff7d01;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+}
+.btn-search svg {
+    width: 20px;
+    height: 20px;
+    margin-top: 3px;
+}
+.right-nav-item {
+    width: 30%;
+}
+.notification-alert, .message {
+    position: relative;
+}
+.notification-badge {
+    position: absolute;
+    padding: 1px 3px;
+    height: 15px;
+    font-size: x-small;
+    display: inline-block;
+    background: red;
+    color: #fff;
+    left: 10px;
+    z-index: 10;
+    border-radius: 4px;
+    top: 5px;
+}
+.dropdown-container {
+    position: absolute;
+    top: 175%;
+    right: -20px;
+    width: 1750%;
+    z-index: 10;
+    background: #fff;
+    border-radius: 10px 10px 0 0;
+    opacity: 0;
+    /*padding-bottom: 20px;*/
+    box-shadow: 0 0 3px rgb(0 0 0 / 30%);
+    transform: scale(0.8);
+    transition: 0.5s ease;
+}
+.dropdown-container.slidedown, .dropdown-logout.slidedown {
+    opacity: 1;
+    transform: scale(1);
+    transition: 0.5s ease;
+}
+.alert-dropdown {
+
+}
+.alert-dropdown h5 {
+    background: rgba(6, 82, 221,1.0);
+    border-radius: 10px 10px 0 0;
+    padding: 10px 0.7rem;
+    color: #fff;
+    font-weight: bolder;
+    font-size: large;
+}
+.alert-item {
+    padding: 5px 0.7rem;
+}
+.alert-item:not(.alert-item:last-child) {
+    border-bottom: 1px solid rgba(223, 230, 233,1.0) ;
+}
+.alert-icon {
+    font-size: xxx-large;
+}
+.alert-info {
+    width: 82%;
+    font-size: large;
+}
+.alert-info h6 {
+    color: rgba(0,0,0,0.5);
+}
+.alert-info span {
+    font-size: medium;
+}
+.see-all-alert {
+    text-align: center;
+    /* width: 100%; */
+    display: block;
+    font-size: small;
+    color: rgba(0,0,0,0.5);
+    padding: 10px;
+    margin: 10px 0 0;
+    font-weight: bolder;
+}
+.profile-logout {
+    width: 60%;
+    justify-content: flex-end;
+    border-left: 1px solid rgba(223, 230, 233,1.0);
+    position: relative;
+}
+.profile-logout .consultant-name {
+    font-size: large;
+    margin-right: 20px;
+}
+.profile-logout .avatar {
+    cursor: pointer;
+}
+.dropdown-logout {
+    position: absolute;
+    background: #fff;
+    top: 140%;
+    right: 0;
+    width: 100%;
+    z-index: 10;
+    padding: 20px 1.4rem;
+    box-shadow: 0 0 3px rgb(0 0 0 / 30%);
+    opacity: 0;
+    transform: scale(0.8);
+    transition: 0.5s ease;
+}
+.Logout-menu {
+    width: 90%;
+    margin: auto;
+    padding: 5px 0;
+    justify-content: flex-start;
+}
+.profile-icon {
+    font-size: large;
+    color: rgba(0,0,0,0.3);
+}
+.Logout-menu span {
+    font-size: large;
+    margin-left: 15px;
+}
+.dropdown-logout-container hr {
+    margin: 5px 0 20px;
+}
+/*----------------------Side bar style ------------------------------*/
+.nav-sidebar {
+    width: 17%;
+    background: #006266;
+    /*height: 100vh;*/
+    position: sticky;
+    padding: 20px 0.5rem;
+}
+.consultant-info {
+    text-align: center;
+    padding: 25px 0;
+    background: rgba(250,250,250,0.2);
+    border: 1px solid #ff7d01;
+    color: #fff;
+}
+.consultant-info p {
+    margin-bottom: 10px;
+    font-size: small;
+}
+.btn-profile {
+    background: #ff7d01;
+    font-size: small;
+    color: #fff;
+    padding: 5px 10px;
+    margin-top: 10px;
+    outline: 0;
+    border: 0;
+}
+.btn-profile:hover, .btn-link:hover{
+    color:unset;
+}
+.sidebar-menu {
+    margin: 40px 0;
+}
+.sidebar-item {
+    color: rgba(250,250,250,0.6);
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(250,250,250,0.6);
+}
+.sidebar-icon,.submenu-link svg {
+    width: 15%;
+}
+.sidebar-icon svg {
+    width: 75%;
+    height: 75%;
+}
+.sidebar-link, .submenu-title,.submenu-link span {
+    width: 85%;
+    padding: 3px 0;
+    color: rgba(250,250,250,0.6);
+}
+.arrow-icon {
+    cursor: pointer;
+}
+.sidebar-dropdown-item {
+    padding: 0 0 0 25px;
+    width: 100%;
+    background: rgba(250,250,250,0.3);
+    max-height: 0;
+    overflow: hidden;
+    transition: 1s ease;
+}
+.slide-down {
+    max-height: 400px;
+    transition: 1s ease;
+}
+.submenu-link {
+    padding: 10px 0;
+}
+.submenu-link svg, .btn-link svg {
+    color: rgba(250,250,250,0.5);
+}
+/*-------------------------------Main content styles----------------------------------*/
+.dashboard-content {
+    padding: 0 1.5rem;
+    min-height: 90vh;
+}
+.dashboard-title h1 {
+    font-size: xx-large;
+}
+.btn-link {
+    background: #ff7d01;
+    color: #fff;
+    padding: 6px 10px 6px 25px;
+    border: 0;
+    outline: 0;
+    position: relative;
+    font-size: small;
+    text-decoration: none;
+    border-radius: 4px;
+}
+.btn-link svg {
+    position: absolute;
+    left: 5px;
+}
+/*---------------------------Metric section styling------------------------------------*/
+.metric-container {
+    margin-top: 20px;
+}
+.metric-item {
+    padding: 20px 15px;
+    box-shadow: 0 0 2px rgb(0 0 0 / 50%);
+    width: 22%;
+    border-radius: 4px;
+}
+.metric-content {
+    width: 70%;
+}
+.metric-content span {
+    font-weight: bolder;
+    font-size: medium;
+}
+.metric-content h5 {
+    font-size: x-large;
+    font-weight: bold;
+    margin-top: 5px;
+}
+.metric-container svg {
+    width: 30px;
+    height: 30px;
+    color: rgba(0,0,0,0.3);
+}
+.currency {
+    text-decoration: line-through;
+}
+/*-------------------------Visualization section stlying---------------------------*/
+.visualizations {
+    margin: 70px auto auto;
+    width: 80%;
+}
+/*------------------------Presentation table styling------------------------------*/
+.table-container {
+    margin: 70px 0;
+    align-items: unset;
+    
+}
+.table-dinner {
+    box-shadow: 0 0 2px rgb(0 0 0 / 50%);
+    padding: 10px;
+    width: 70%;
+}
+.table-caption {
+    font-size: x-large;
+    font-weight: bold;
+}
+.view-all {
+    position: unset;
+    padding: 6px 13px;
+}
+.table {
+    margin-top: 10px;
+}
+tr td {
+    color: rgba(0,0,0,0.7);
+}
+tr th:last-child, tr td:last-child{
+    text-align: right;
+}
+.booked-dinner,.rescheduled-dinner {
+    background: #009432;
+    padding: 4px 10px;
+    color: #fff;
+    border-radius: 4px;
+    font-size: small;
+}
+.rescheduled-dinner{
+    background: red;
+}
+.actions {
+    justify-content: flex-end;
+}
+/*--------------------------------Recruits section styling----------------------------------*/
+.recruits-info {
+    box-shadow: 0 0 2px rgb(0 0 0 / 50%);
+    padding: 10px;
+    width: 25%;
+}
+.recruits-info h4 {
+    font-weight: bolder;
+    margin-bottom: 15px;
+}
+.recruit-details {
+    justify-content: unset;
+    margin-bottom: 7px;
+}
+.personal-info {
+    margin-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    line-height: 17px;
+}
+.recruit-name {
+    display: block;
+    font-size: large;
+    font-weight: bolder;
+}
+.stateOfOrigin {
+    font-size: x-small;
+    color: rgba(0,0,0,0.5);
+}
+.dashboard-footer {
+    text-align: center;
+    color: rgba(0,0,0,0.5);
+}
+/*------------------------------Register dinner section style---------------------------------*/
+.container-form {
+    margin: 40px auto;
+    width: 65%;
+}
+.form-title {
+    margin-bottom: 20px;
+}
+.instruction {
+    color: rgba(0,0,0,0.5);
+    font-size: small;
+}
+.line {
+    flex-grow: 1;
+    display: block;
+    height: 3px;
+    background: #006266;
+    margin: 4px 0 0 2px;
+}
+form .row-col2, .row-col3{
+    margin-top: 10px;
+}
+.col2 {
+    width: 48%;
+    position: relative;
+}
+.required {
+    color:red;
+}
+.col3 {
+
+}
+.col3.small {
+
+}
+.col3.smaller {
+    width: 20%;
+}
+.form-group {
+    margin-top: 10px;
+}
+.btn-submit {
+    color: #fff;
+    background: #ff7d01;
+    margin-top: 25px;  
+}
+/*-----------------------Dinner details page styles------------------------------------*/
+.dinner-list {
+    margin-bottom: 15px;
+}
+.title-container {
+    padding: 7px 10px;
+    background: rgba(0,0,0,0.1);
+}
+.title-left {
+
+}
+.contact-action {
+
+}
+.dinner-details {
+
+}
+.cust-name {
+
+}
+.socials {
+
+}
+.cust-contact {
+
+}
+.cust-email {
+
+}
+.cust-address {
+
+}
