@@ -4,7 +4,7 @@ const CustomerData=[
     {
         id:1,
         name:{firstName:"Mary",lastName:"Aborgonye"},
-        Address:"",
+        address:"20, Ogunabali Street, Ikeja Lagos",
         contact: {phone:"080345874554", email:'amary@gmail.com'},
         DOB: "",
         state: "Lagos",
@@ -12,7 +12,7 @@ const CustomerData=[
     {
         id:1,
         name:{firstName:"Sunday",lastName:"Osunde"},
-        Address:"",
+        address:"",
         contact: {phone:"0703746653", email:'sundayOsunde@gmail.com'},
         DOB: "",
         state: "Lagos",

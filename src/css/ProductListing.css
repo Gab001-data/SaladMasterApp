@@ -47,7 +47,7 @@ div.item-tab.active-ProductTab::after {
 }
 .product-item-three, .product-item {
     width: 30%;
-    height: 57vh;
+    height: 385px;
     padding: 20px 1.2rem;
     border: 1px solid lightblue;
     outline: none;

@@ -6,7 +6,8 @@ import CustomerData from "./CustomerData";
 
 const SalesData=[
     {
-        consultants: {owner:ConsultantsData[0],assistance:ConsultantsData[1]},
+        id:1,
+        consultants: {owner:ConsultantsData[0],assistance:ConsultantsData[0]},
         status:"part-payment",
         installments:[
             {

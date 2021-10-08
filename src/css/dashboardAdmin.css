@@ -25,7 +25,7 @@ a {
 .dashboard-nav {
     background: #fff;
     padding: 15px 2%;
-    margin-bottom: 30px;
+    /*margin-bottom: 30px;*/
     box-shadow: 10px 0 15px rgb(0 0 0 / 30%);
     position: sticky;
     width: 100%;
@@ -265,7 +265,7 @@ a {
 }
 /*-------------------------------Main content styles----------------------------------*/
 .dashboard-content {
-    padding: 0 1.5rem;
+    padding: 30px 1.5rem;
     min-height: 90vh;
 }
 .dashboard-title h1 {
@@ -350,9 +350,9 @@ tr th:last-child, tr td:last-child{
     text-align: right;
 }
 .booked-dinner,.rescheduled-dinner {
-    background: #009432;
+    background: rgba(0, 148, 50, 0.3);
     padding: 4px 10px;
-    color: #fff;
+    color: #009432;
     border-radius: 4px;
     font-size: small;
 }
@@ -433,43 +433,239 @@ form .row-col2, .row-col3{
 .col3.smaller {
     width: 20%;
 }
+.span-2 {
+    width: 68%;
+}
+.span-1 {
+    width: 30%;
+}
 .form-group {
     margin-top: 10px;
+}
+.select {
+    margin-top: 21px;
 }
 .btn-submit {
     color: #fff;
     background: #ff7d01;
-    margin-top: 25px;  
+    margin-top: 25px; 
+    width: 30%; 
 }
 /*-----------------------Dinner details page styles------------------------------------*/
+.date-filter {
+    width: 40%;
+    justify-content: space-between;
+    margin-top: 20px;
+    align-items:center;
+}
+.date-filter input {
+    width: 100%;
+    margin-left: 0.8rem;
+}
+.show-all {
+    margin-bottom: 0;
+    cursor: pointer;
+    color: blue;
+}
+.dinner-container {
+    margin-top: 60px;
+}
 .dinner-list {
     margin-bottom: 15px;
 }
 .title-container {
-    padding: 7px 10px;
+    padding: 5px 10px;
     background: rgba(0,0,0,0.1);
 }
 .title-left {
 
 }
+.title-left img {
+    width: 50px;
+    border-radius: 50%;
+    margin-right: 0.8rem;
+}
+.title-left h4 {
+    font-weight: bold;
+    font-size: larger;
+}
 .contact-action {
+    width: 30%;
+    margin-right: 8rem;
+}
+.contact-action svg {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+.request-confirmation {
+    padding: 4px 10px;
+    border-radius: 4px;
+    border: none;
+    background: #5758BB;
+    color: #fff;
+    position: absolute;
+    right: 10px;
+}
+.dinner-details-container {
 
+    overflow: hidden;
+    max-height: 0;
+    transition: 0.3s ease;
+}
+.expand-container {
+    max-height: 265px;
+    transition: 0.3s ease;
+    overflow: hidden;
 }
 .dinner-details {
-
+    padding: 25px 15px;
+    background: rgba(0,0,0,0.04);
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: relative;
 }
-.cust-name {
-
-}
-.socials {
-
+.social-accounts {
+    width: 100%;
 }
 .cust-contact {
-
+    text-align: left;
+    width: 40%;
 }
-.cust-email {
+.cust-contact h4, .dinner-info h4 {
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: larger;
+}
+.confirm-tick {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color:#009432;
+    margin: 25px auto 20px;
+}
+.dinner-info {
 
 }
 .cust-address {
+
+}
+/*------------------------------Product sales page styling------------------------------*/
+.product-container {
+    position: relative;
+}
+.sales-item {
+    margin-top: 60px;
+    padding: 25px 15px;
+    background: rgba(153, 128, 250,0.15);
+    border-radius: 10px;
+}
+.sales-container {
+    align-items: unset;
+    border-top: 2px solid rgba(87, 88, 187,1.0);
+    border-bottom:2px solid rgba(87, 88, 187,1.0);
+    border-left: 1px dotted rgba(87, 88, 187,1.0);
+    border-right: 1px dotted rgba(87, 88, 187,1.0);
+    padding: 10px;
+}
+.avatar {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.05);
+    position: relative;
+    overflow: hidden;
+}
+.avatar-default {
+    position: absolute;
+    top: 35%;
+    left: 35%;
+}
+.customer-sale {
+    align-items: unset;
+    width: 30%;
+}
+.customer-sale-info {
+
+}
+.sold-product {
+    width: 40%;
+}
+.sale-product-info {
+    align-items: unset;
+}
+.sales-header {
+
+}
+.product-sale-info {
+    width: 80%;
+}
+.product-feature p {
+    font-size: small;
+    color: rgba(0,0,0,0.7);   
+}
+.customer-icon {
+    justify-content: unset;
+}
+.customer-icon p {
+    margin-bottom: 0;
+    padding-left: 0.8rem;
+    color: rgba(0,0,0,0.6);
+}
+.sale-info {
+    width: 25%;
+}
+.flexbox2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+.sale-info .flexbox2 p {
+    margin-bottom: 10px;
+    font-size: small;
+    color: rgba(0,0,0,0.7);
+}
+.sale-info .flexbox2 h6 {
+    width: 45%;
+}
+.flexbox.row2 {
+    width: 100%;
+    padding-top: 20px;
+}
+.status-info {
+    width: 35%;
+}
+.sales-action {
+    width: 18%;
+    margin-right: 4rem;
+}
+.sales-action a, .sales-action p {
+    border-radius: 8px;
+    background: rgba(87, 88, 187,0.2);
+    padding: 4px;
+    color: rgba(87, 88, 187,1.0);
+}
+.sales-action a {
+    padding: 4px 10px;
+}
+.sales-action p {
+    cursor: pointer;
+    margin-top: 17px;
+}
+.payments-history {
+    position: absolute;
+    z-index: 100;
+    left: 35%;
+    min-height: 370px;
+    max-height: 470px;
+    background: #fff;
+    /* width: 25%; */
+    padding: 10px;
+    box-shadow: 0px 0px 5px rgb(0 0 0 / 30%);
+    overflow: scroll;
+}
+.payment-table {
 
 }

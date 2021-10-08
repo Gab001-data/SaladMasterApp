@@ -127,9 +127,9 @@ const DashboardHome=(props)=>{
                                             return (
                                                 dinner.status.toLowerCase()==='booked'? 
                                                 <tr>
-                                                    <td>{dinner.custName}</td>
+                                                    <td>{dinner.custFname+" "+dinner.custLname}</td>
                                                     <td>{dinner.bookDate}</td>
-                                                    <td>{dinner.dinnerTIme}</td>
+                                                    <td>{dinner.dinnerTime}</td>
                                                     <td><span className={new Date()> new Date(dinner.bookedDate)?"rescheduled-dinner":"booked-dinner"}>
                                                     {new Date()> new Date(dinner.bookedDate)? "Rescheduled":"Booked"}
                                                     </span></td>

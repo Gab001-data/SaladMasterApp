@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import DashboardNav from "./DashboardNav";
 import "../css/bootstrap.min.css";
 import "../css/dashboardAdmin.css";
@@ -23,6 +23,7 @@ import DashboardHome from "./DashboardHome";
 import {BrowserRouter as Router, Switch, Route, Link, useParams, useRouteMatch } from "react-router-dom";
 import RegisterDinner from "./RegisterDinner";
 import Presentations from "./Presentations";
+import ProductSales from "./ProductSales";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -34,6 +35,7 @@ const useStyles = makeStyles((theme) => ({
     }
   }));
 const DashboardAdmin = ()=>{
+    const [selectDate, setSelectDate]=useState("");
     let consultant_id=1;                                    //consultant ID
     let consultant=ConsultantsData.filter(consult=>consult.id===consultant_id)[0]; //consultant
     const months=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
@@ -120,7 +122,6 @@ const DashboardAdmin = ()=>{
         }
     });
     const sortedBooking=bookedDinners.sort((a,b)=>(Date(a.bookDate)- Date(b.bookDate))*(-1));
-    console.log(sortedBooking);
     //product sales-metrics
     const {itemCount:salesCount,metrics:consultantSales}=getConsultantStat(consultant_id,SalesData,"sales");
     //available commissions-metrics
@@ -134,7 +135,15 @@ const DashboardAdmin = ()=>{
     const dinnerData=ArrayData(monthlyDinnerStats);
     const cookedData=ArrayData(monthlyCookedStats);
     let {path, url}=useRouteMatch();
-    console.log(path,url);
+    //filter dinner by date
+    const filterDinnerData=(e)=>{
+        let dateArr=String(e._d).split(" ");
+        let setDate=`${dateArr[2]}-${dateArr[1]}-${dateArr[3]}`;
+        setSelectDate(setDate);
+    }
+    const handleShowAll=()=>{
+        setSelectDate("");
+    }
     return(
         <section className="section-container">
             <div className="nav-sidebar">
@@ -153,7 +162,10 @@ const DashboardAdmin = ()=>{
                             <RegisterDinner title="Register Dinner" />
                         </Route>
                         <Route exact path={`${path}/health-demo`} >
-                            <Presentations title="Dinners/Presentations" dinners={bookedDinners} />
+                            <Presentations title="Dinners/Presentations" dinners={!selectDate?bookedDinners:bookedDinners.filter(item=>item.bookDate===selectDate)} filterDinnerData={filterDinnerData} handleShowAll={handleShowAll} />
+                        </Route>
+                        <Route exact path={`${path}/metrics/sales`} >
+                            <ProductSales title="Product Sales" sales={consultantSales} filterDinnerData={filterDinnerData} handleShowAll={handleShowAll} />
                         </Route>
                     </Switch>
                 </div>

@@ -14,11 +14,11 @@ const ProductData=[
     {
         id:0,
         name: "Personal Set",
-        productInfo: "For individuals and couples moving into their first home, empty nesters looking to downsize, or families needing to prepare smaller quantities of food.",
-        features: "For individuals and couples moving into their first home, empty nesters looking to downsize, or families needing to prepare smaller quantities of food, this set includes the basic pieces to get you started. Set includes: 1 Qt. (.9L) Sauce Pan with Cover, 3 Qt. (2.8L) Sauce Pan with Cover, 3 Qt. (1.8L) Perforated Basket, 9 in. (22.9cm) Skillet with Cover, Stainless Steel Powdered Cleaner, two long handles, two side handles.",
+        productInfo: "For individuals and couples moving into their first home, empty nesters looking to downsize, or families needing to prepare smaller quantities of food.this set includes the basic pieces to get you started",
+        features: "Set includes: 1 Qt. (.9L) Sauce Pan with Cover, 3 Qt. (2.8L) Sauce Pan with Cover, 3 Qt. (1.8L) Perforated Basket, 9 in. (22.9cm) Skillet with Cover, Stainless Steel Powdered Cleaner, two long handles, two side handles.",
         stock: 30,
         img: [s_personalSet,s_5QrtGourmetWok,s_10QrtRoasterWithCover,s_electricSkillet,s_9QrtBraiserPanWithCover],
-        amt: 2000,
+        amt: '$2000',
         type: "set"
     },
     {
